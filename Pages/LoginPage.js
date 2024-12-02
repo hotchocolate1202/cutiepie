@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: '#333',
-    marginBottom: 32, // Jarak antara judul dan input
+    marginBottom: 32, 
   },
   input: {
     width: '100%',
