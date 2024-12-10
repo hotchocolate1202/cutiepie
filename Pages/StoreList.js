@@ -91,7 +91,10 @@ const StoreList = ({ navigation }) => {
       />
 
       {/* Tombol NEW STORE di bawah */}
-      <TouchableOpacity style={styles.newStoreButton}>
+      <TouchableOpacity 
+      style={styles.newStoreButton}
+      onPress={() => navigation.navigate('NewStore')}
+      >
         <Text style={styles.newStoreButtonText}>NEW STORE</Text>
       </TouchableOpacity>
     </View>
