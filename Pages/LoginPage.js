@@ -7,9 +7,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const LoginPage = () => {
+const LoginPage = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    navigation.navigate('HomePage'); 
+  };
 
   return (
     <View style={styles.container}>
@@ -34,7 +38,7 @@ const LoginPage = () => {
         secureTextEntry={true}
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>NEXT</Text>
       </TouchableOpacity>
     </View>

@@ -1,9 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 const SplashScreen = ({ navigation }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('LoginPage')}>
+      <Image 
+        source={require('D:/ReactNative/firstApp/assets/logo.png')} 
+        style={styles.logo} 
+      />
       <Text style={styles.title}>YAYSTOCK</Text>
       <Text style={styles.text}>Stock Aman, Kerja Nyaman!</Text>
     </TouchableOpacity>
@@ -16,6 +20,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F2F5EA',
+  },
+  logo: {
+    width: 250, 
+    height: 250, 
+    marginBottom: 20, 
+    resizeMode: 'contain', 
   },
   title: {
     fontSize: 48,
