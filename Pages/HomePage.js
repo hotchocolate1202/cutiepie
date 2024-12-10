@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const HomePage = () => {
+const HomePage = ({route, navigation}) => {
+
+  const warehouseCount = route.params?.warehouseCount;
+  const storeCount = route.params?.storeCount;
+
   return (
     <View style={styles.container}>
      
@@ -71,30 +75,38 @@ const HomePage = () => {
         </View>
       </View>
 
-{/* Warehouse and Store Cards */}
-      <View style={styles.rowContainer}>
-  <View style={styles.rowItem}>
-    <Image 
-      source={require('D:/ReactNative/firstApp/assets/warehouse.png')} 
-      style={styles.rowIcon} 
-      resizeMode="contain" 
-    />
-    <Text style={styles.rowText}>
-      <Text style={styles.rowNumber}>0</Text> Warehouse
-    </Text>
-  </View>
-  <View style={styles.rowItem}>
-    <Image 
-      source={require('D:/ReactNative/firstApp/assets/store.png')} 
-      style={styles.rowIcon} 
-      resizeMode="contain" 
-    />
-    <Text style={styles.rowText}>
-      <Text style={styles.rowNumber}>0</Text> Store
-    </Text>
-  </View>
-</View>
+ {/* Warehouse and Store Cards */}
+ <View style={styles.rowContainer}>
+        {/* Warehouse Container */}
+        <TouchableOpacity 
+          style={styles.rowItem} 
+          onPress={() => navigation.navigate('WarehouseList')}
+        >
+          <Image 
+            source={require('D:/ReactNative/firstApp/assets/warehouse.png')} 
+            style={styles.rowIcon} 
+            resizeMode="contain" 
+          />
+          <Text style={styles.rowText}>
+            <Text style={styles.rowNumber}>{warehouseCount}</Text> Warehouse
+          </Text>
+        </TouchableOpacity>
 
+        {/* Store Container */}
+        <TouchableOpacity 
+          style={styles.rowItem} 
+          onPress={() => navigation.navigate('StoreList')}
+        >
+          <Image 
+            source={require('D:/ReactNative/firstApp/assets/store.png')} 
+            style={styles.rowIcon} 
+            resizeMode="contain" 
+          />
+          <Text style={styles.rowText}>
+            <Text style={styles.rowNumber}>{storeCount}</Text> Store
+          </Text>
+        </TouchableOpacity>
+      </View>
 
       
       <View style={styles.footer}>
