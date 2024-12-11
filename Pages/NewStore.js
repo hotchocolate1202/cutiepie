@@ -6,9 +6,8 @@ const NewStore = ({ navigation }) => {
   const [storeLocation, setStoreLocation] = useState('');
 
   const handleSave = () => {
-    // Fungsi untuk menyimpan data Store, misalnya bisa dipakai untuk API atau update state global
     console.log('Store Saved:', storeName, storeLocation);
-    // Navigasi kembali ke halaman sebelumnya setelah menyimpan
+  
     navigation.goBack();
   };
 
@@ -18,7 +17,7 @@ const NewStore = ({ navigation }) => {
       <View style={styles.header}>
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Image
-            source={require('D:/ReactNative/firstApp/assets/back.png')} // Ganti dengan path gambar back yang sesuai
+            source={require('D:/ReactNative/firstApp/assets/back.png')} 
             style={styles.backIcon}
           />
           <Text style={styles.backText}>Back</Text>

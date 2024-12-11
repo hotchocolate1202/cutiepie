@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 
-const NewWarehouse = ({ navigation }) => {
-  const [warehouseName, setWarehouseName] = useState('');
-  const [warehouseLocation, setWarehouseLocation] = useState('');
+const NewItem = ({ navigation }) => {
+  const [itemName, setItemName] = useState('');
+  const [itemCategory, setItemCategory] = useState('');
+  const [itemQty, setItemQty] = useState();
+  const [warehouseID, setItemWarehouseID] = useState('');
+  const [itemShelfNumber, setItemShelfNumber] = useState('');
 
   const handleSave = () => {
-       console.log('Warehouse Saved:', warehouseName, warehouseLocation);
-   
+    console.log('Item Saved:', itemName, itemCategory, itemQty, warehouseID, itemShelfNumber);
+  
     navigation.goBack();
   };
 
@@ -25,22 +28,46 @@ const NewWarehouse = ({ navigation }) => {
       </View>
 
       {/* Please Fill Information Text */}
-      <Text style={styles.infoText}>Please Fill for Warehouse Information!</Text>
+      <Text style={styles.infoText}>Please Fill for Item Information!</Text>
 
-      {/* Warehouse Name Input */}
+      {/* Item Name Input */}
       <TextInput
         style={styles.input}
-        placeholder="Warehouse Name"
-        value={warehouseName}
-        onChangeText={setWarehouseName}
+        placeholder="Item Name"
+        value={itemName}
+        onChangeText={setItemName}
       />
 
-      {/* Warehouse Location Input */}
+      {/* Item Category Input */}
       <TextInput
         style={styles.input}
-        placeholder="Warehouse Location"
-        value={warehouseLocation}
-        onChangeText={setWarehouseLocation}
+        placeholder="Item Category"
+        value={itemCategory}
+        onChangeText={setItemCategory}
+      />
+
+   {/* Item Quantity Input */}
+   <TextInput
+        style={styles.input}
+        placeholder="Item Quantity"
+        value={itemQty}
+        onChangeText={setItemQty}
+      />
+
+         {/* Item Warehouse ID Input */}
+   <TextInput
+        style={styles.input}
+        placeholder="Warehouse ID"
+        value={warehouseID}
+        onChangeText={setItemWarehouseID}
+      />
+
+        {/* Item Shelf Number Input */}
+   <TextInput
+        style={styles.input}
+        placeholder="Item Shelf Number"
+        value={itemShelfNumber}
+        onChangeText={setItemShelfNumber}
       />
 
       {/* Save Button */}
@@ -109,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewWarehouse;
+export default NewItem;

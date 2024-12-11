@@ -5,12 +5,12 @@ const HomePage = ({route, navigation}) => {
 
   const warehouseCount = route.params?.warehouseCount;
   const storeCount = route.params?.storeCount;
-  const itemAvailCount = route.params?.itemAvailCount 
-  const itemLowCount = route.params?.itemLowCount 
-  const itemOutCount = route.params?.itemOutCount
+  const itemAvailCount = route.params?.itemAvailCount;
+  const itemLowCount = route.params?.itemLowCount;
+  const itemOutCount = route.params?.itemOutCount;
+  
   return (
     <View style={styles.container}>
-     
       <View style={styles.header}>
         <Image 
           source={require('D:/ReactNative/firstApp/assets/logo.png')} 
@@ -128,34 +128,49 @@ const HomePage = ({route, navigation}) => {
 
       
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerItem}>
-          <Image 
-            source={require('D:/ReactNative/firstApp/assets/homepress.png')} 
-            style={styles.footerIcon} 
-          />
-          <Text style={styles.footerText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Image 
-            source={require('D:/ReactNative/firstApp/assets/stocking.png')} 
-            style={styles.footerIcon} 
-          />
-          <Text style={styles.footerText}>Stocking</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Image 
-            source={require('D:/ReactNative/firstApp/assets/history.png')} 
-            style={styles.footerIcon} 
-          />
-          <Text style={styles.footerText}>History</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Image 
-            source={require('D:/ReactNative/firstApp/assets/profile.png')} 
-            style={styles.footerIcon} 
-          />
-          <Text style={styles.footerText}>Profile</Text>
-        </TouchableOpacity>
+    {/* Home */}
+    <View style={styles.footerItem}>
+    <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
+      <Image
+        source={require('D:/ReactNative/firstApp/assets/homepress.png')}
+        style={styles.footerIcon}
+      />
+      <Text style={styles.footerText}>Home</Text>
+    </TouchableOpacity>
+  </View>
+
+      {/* Stocking */}
+  <View style={styles.footerItem}>
+    <TouchableOpacity onPress={() => navigation.navigate('StockingPage')}>
+      <Image
+        source={require('D:/ReactNative/firstApp/assets/stocking.png')}
+        style={styles.footerIcon}
+      />
+      <Text style={styles.footerText}>Stocking</Text>
+    </TouchableOpacity>
+  </View>
+
+        {/* History */}
+  <View style={styles.footerItem}>
+    <TouchableOpacity onPress={() => navigation.navigate('HistoryPage')}>
+      <Image
+        source={require('D:/ReactNative/firstApp/assets/history.png')}
+        style={styles.footerIcon}
+      />
+      <Text style={styles.footerText}>History</Text>
+    </TouchableOpacity>
+  </View>
+  
+        {/* Profile */}
+  <View style={styles.footerItem}>
+    <TouchableOpacity onPress={() => navigation.navigate('ProfilePage')}>
+      <Image
+        source={require('D:/ReactNative/firstApp/assets/profile.png')}
+        style={styles.footerIcon}
+      />
+      <Text style={styles.footerText}>Profile</Text>
+    </TouchableOpacity>
+    </View>
       </View>
     </View>
   );
@@ -229,11 +244,11 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#E9F5FF',
-    padding: 10, // Mengurangi padding agar kontainer lebih kecil
+    padding: 10,
     marginVertical: 8,
     borderRadius: 10,
     alignItems: 'center',
-    height: 120, // Mengurangi tinggi kontainer agar tidak terlalu besar
+    height: 120,
   },
 
   cardIcon: {
@@ -268,26 +283,25 @@ const styles = StyleSheet.create({
   footerIcon: {
     width: 24,
     height: 24,
+    alignSelf: 'center',
   },
   footerText: {
     fontSize: 14,
     marginTop: 4,
   },
-
   rowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingVertical: 10,
-    marginBottom: 2, // Menambahkan jarak ke bawah
+    marginBottom: 2, 
   },
-
   rowItem: {
     backgroundColor: '#E9F5FF',
     alignItems: 'center',
     padding: 20,
     borderRadius: 10,
-    width: '45%', // Membagi ruang 2 kontainer
-    height: 90, // Mengurangi tinggi kontainer
+    width: '45%', 
+    height: 90,
   },
   rowIcon: {
     width: 30,

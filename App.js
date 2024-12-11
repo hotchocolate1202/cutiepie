@@ -11,6 +11,9 @@ import WarehouseList from './Pages/WarehouseList';
 import NewWarehouse from './Pages/NewWarehouse';
 import StoreList from './Pages/StoreList';
 import NewStore from './Pages/NewStore';
+import StockingPage from './Pages/StockingPage';
+import NewItem from './Pages/NewItem';
+
 
 const Stack = createStackNavigator();
 
@@ -28,6 +31,8 @@ const App = () => {
         <Stack.Screen name="NewWarehouse" component={NewWarehouse} />
         <Stack.Screen name="StoreList" component={StoreList} />
         <Stack.Screen name="NewStore" component={NewStore} />
+        <Stack.Screen name="StockingPage" component={StockingPage} />
+        <Stack.Screen name="NewItem" component={NewItem} />
       </Stack.Navigator>
     </NavigationContainer>
   );

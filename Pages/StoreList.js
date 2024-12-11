@@ -40,7 +40,7 @@ const StoreList = ({ navigation }) => {
     setSearch(searchText);
 
     if (searchText.trim() === "") {
-      setfilteredStore(initialStore); // Reset jika input kosong
+      setfilteredStore(initialStore);
     } else {
       const filtered = initialStore.filter((store) =>
         store.storeID.toLowerCase().includes(searchText.toLowerCase()) ||
