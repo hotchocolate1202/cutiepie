@@ -79,12 +79,17 @@ const StockingPage = ({ navigation }) => {
       <FlatList
         data={filteredItem}
         renderItem={({ item }) => (
+            <TouchableOpacity 
+            style={styles.itemContainer}
+            onPress={() => navigation.navigate('ItemDetail', { itemID: item.itemID })}
+          >
           <View style={styles.itemContainer}>
             <Text style={styles.itemText}>Item ID: {item.itemID}</Text>
             <Text style={styles.itemText}>Item Name: {item.itemName}</Text>
             <Text style={styles.itemText}>Item Category: {item.itemCategory}</Text>
             <Text style={styles.itemText}>Item Quantity: {item.itemQty}</Text>
           </View>
+          </TouchableOpacity>
         )}
         keyExtractor={(item) => item.itemID}
         contentContainerStyle={styles.listContainer}

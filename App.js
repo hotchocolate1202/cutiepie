@@ -13,6 +13,9 @@ import StoreList from './Pages/StoreList';
 import NewStore from './Pages/NewStore';
 import StockingPage from './Pages/StockingPage';
 import NewItem from './Pages/NewItem';
+import ItemDetail from './Pages/ItemDetail';
+import AddTransaction from './Pages/AddTransaction';
+import ManageStock from './Pages/ManageStock';
 
 
 const Stack = createStackNavigator();
@@ -33,6 +36,10 @@ const App = () => {
         <Stack.Screen name="NewStore" component={NewStore} />
         <Stack.Screen name="StockingPage" component={StockingPage} />
         <Stack.Screen name="NewItem" component={NewItem} />
+        <Stack.Screen name="ItemDetail" component={ItemDetail} />
+        <Stack.Screen name="AddTransaction" component={AddTransaction} />
+        <Stack.Screen name="ManageStock" component={ManageStock} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
