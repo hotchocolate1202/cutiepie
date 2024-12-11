@@ -5,7 +5,9 @@ const HomePage = ({route, navigation}) => {
 
   const warehouseCount = route.params?.warehouseCount;
   const storeCount = route.params?.storeCount;
-
+  const itemAvailCount = route.params?.itemAvailCount 
+  const itemLowCount = route.params?.itemLowCount 
+  const itemOutCount = route.params?.itemOutCount
   return (
     <View style={styles.container}>
      
@@ -40,40 +42,56 @@ const HomePage = ({route, navigation}) => {
 
       
       <View style={styles.cardContainer}>
-        <View style={styles.card}>
-          <Image 
-            source={require('D:/ReactNative/firstApp/assets/avaiablestock.png')} 
-            style={styles.cardIcon} 
-            resizeMode="contain"
-          />
-          <Text style={styles.cardText}>
-            <Text style={styles.cardNumber}>0</Text> Item
-          </Text>
-          <Text style={styles.cardSubtitle}>Available Stock</Text>
-        </View>
-        <View style={styles.card}>
-          <Image 
-            source={require('D:/ReactNative/firstApp/assets/lowstock.png')} 
-            style={styles.cardIcon} 
-            resizeMode="contain"
-          />
-          <Text style={styles.cardText}>
-            <Text style={styles.cardNumber}>0</Text> Item
-          </Text>
-          <Text style={styles.cardSubtitle}>Low Stock (below 15)</Text>
-        </View>
-        <View style={styles.card}>
-          <Image 
-            source={require('D:/ReactNative/firstApp/assets/outstock.png')} 
-            style={styles.cardIcon} 
-            resizeMode="contain"
-          />
-          <Text style={styles.cardText}>
-            <Text style={styles.cardNumber}>0</Text> Item
-          </Text>
-          <Text style={styles.cardSubtitle}>Out of Stock</Text>
-        </View>
-      </View>
+  {/* Available Stock */}
+  <TouchableOpacity
+    style={styles.card}
+    onPress={() => navigation.navigate('AvaiableStock')}
+  >
+    <Image
+      source={require('D:/ReactNative/firstApp/assets/avaiablestock.png')}
+      style={styles.cardIcon}
+      resizeMode="contain"
+    />
+    <Text style={styles.cardText}>
+      <Text style={styles.cardNumber}>{itemAvailCount}</Text> Item
+    </Text>
+    <Text style={styles.cardSubtitle}>Available Stock</Text>
+  </TouchableOpacity>
+
+  {/* Low Stock */}
+  < TouchableOpacity
+    style={styles.card}
+    onPress={() => navigation.navigate('LowStock')}
+  >
+    <Image
+      source={require('D:/ReactNative/firstApp/assets/lowstock.png')}
+      style={styles.cardIcon}
+      resizeMode="contain"
+    />
+    <Text style={styles.cardText}>
+      <Text style={styles.cardNumber}>{itemLowCount}</Text> Item
+    </Text>
+    <Text style={styles.cardSubtitle}>Low Stock (below 15)</Text>
+    </TouchableOpacity>
+ 
+
+  {/* Out of Stock */}
+  < TouchableOpacity
+    style={styles.card}
+    onPress={() => navigation.navigate('OutStock')}
+  >
+    <Image
+      source={require('D:/ReactNative/firstApp/assets/outstock.png')}
+      style={styles.cardIcon}
+      resizeMode="contain"
+    />
+    <Text style={styles.cardText}>
+      <Text style={styles.cardNumber}>{itemOutCount}</Text> Item
+    </Text>
+    <Text style={styles.cardSubtitle}>Out of Stock</Text>
+    </TouchableOpacity>
+</View>
+
 
  {/* Warehouse and Store Cards */}
  <View style={styles.rowContainer}>
