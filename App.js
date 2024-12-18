@@ -17,6 +17,9 @@ import ItemDetail from './Pages/ItemDetail';
 import AddTransaction from './Pages/AddTransaction';
 import ManageStock from './Pages/ManageStock';
 import HistoryPage from './Pages/HistoryPage';
+import ProfilePage from './Pages/ProfilePage';
+import UpdateProfile from './Pages/UpdateProfile';
+import UpdatePassword from './Pages/UpdatePassword';
 
 
 const Stack = createStackNavigator();
@@ -41,6 +44,9 @@ const App = () => {
         <Stack.Screen name="AddTransaction" component={AddTransaction} />
         <Stack.Screen name="ManageStock" component={ManageStock} />
         <Stack.Screen name="HistoryPage" component={HistoryPage} />
+        <Stack.Screen name="ProfilePage" component={ProfilePage} />
+        <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
+        <Stack.Screen name="UpdatePassword" component={UpdatePassword} />
 
       </Stack.Navigator>
     </NavigationContainer>
