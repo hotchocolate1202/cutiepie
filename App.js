@@ -16,6 +16,7 @@ import NewItem from './Pages/NewItem';
 import ItemDetail from './Pages/ItemDetail';
 import AddTransaction from './Pages/AddTransaction';
 import ManageStock from './Pages/ManageStock';
+import HistoryPage from './Pages/HistoryPage';
 
 
 const Stack = createStackNavigator();
@@ -39,6 +40,7 @@ const App = () => {
         <Stack.Screen name="ItemDetail" component={ItemDetail} />
         <Stack.Screen name="AddTransaction" component={AddTransaction} />
         <Stack.Screen name="ManageStock" component={ManageStock} />
+        <Stack.Screen name="HistoryPage" component={HistoryPage} />
 
       </Stack.Navigator>
     </NavigationContainer>
