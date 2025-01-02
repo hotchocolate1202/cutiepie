@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, FlatList } 
 
 const WarehouseList = ({ navigation }) => {
   const [search, setSearch] = useState('');
+  console.log('Warehouse Count:', warehouseCount);
+
 
   const initialWarehouse = [
     {
